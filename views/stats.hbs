@@ -1,0 +1,101 @@
+<body>
+<h1>Add Stats</h1>
+<div>
+    <form id="playerStatsForm">
+        <label for="player">Select Player:</label>
+        <select id="player" name="player" required>
+            <option value="">-- Choose a Player --</option>
+            <option>1. Kennedy Burke</option>
+            <option>2. Natasha Cloud</option>
+            <option>3. Marquesha Davis</option>
+            <option>4. Leonie Fiebich</option>
+            <option>5. Rebekah Gardner</option>
+            <option>6. Isabelle Harrison</option>
+            <option>7. Sabrina Ionescu</option>
+            <option>8. Marine Johannes</option>
+            <option>9. Jonquel Jones</option>
+            <option>10. Nyara Sabally</option>
+            <option>11. Jaylyn Sherrod</option>
+            <option>12. Breanna Stewart</option>
+        </select>
+
+        <fieldset style="margin-top: 20px; padding: 15px; border: 1px solid #ccc;">
+            <legend><strong>Game Info</strong></legend>
+
+            <label for="gameDateInput">Game Date:</label>
+            <input
+                    type="text"
+                    id="gameDateInput"
+                    name="gameDate"
+                    placeholder="MMDDYYYY"
+                    pattern="^\d{8}$"
+                    title="Enter date in format MMDDYYYY"
+                    required
+            /><br><br>
+
+            <label for="opponent">Opponent:</label>
+            <select id="opponent" name="opponent" required>
+                <option value="">-- Choose an Opponent --</option>
+                <option>Atlanta Dream</option>
+                <option>Chicago Sky</option>
+                <option>Connecticut Sun</option>
+                <option>Dallas Wings</option>
+                <option>Golden State Valkyries</option>
+                <option>Indiana Fever</option>
+                <option>Las Vegas Aces</option>
+                <option>Los Angeles Sparks</option>
+                <option>Minnesota Lynx</option>
+                <option>New York Liberty</option>
+                <option>Phoenix Mercury</option>
+                <option>Seattle Storm</option>
+                <option>Washington Mystics</option>
+            </select>
+
+            <label for="homeGame">
+                <input type="checkbox" id="homeGame" name="homeGame" />
+                Home Game?
+            </label><br><br>
+
+            <label for="minutes">Minutes:</label>
+            <input type="number" id="minutes" name="minutes" min="0" step="1" required /><br><br>
+
+            <label for="points">Points:</label>
+            <input type="number" id="points" name="points" min="0" step="1" required /><br><br>
+
+            <label for="rebounds">Rebounds:</label>
+            <input type="number" id="rebounds" name="rebounds" min="0" step="1" required /><br><br>
+
+            <label for="assists">Assists:</label>
+            <input type="number" id="assists" name="assists" min="0" step="1" required /><br><br>
+
+            <label for="steals">Steals:</label>
+            <input type="number" id="steals" name="steals" min="0" step="1" required /><br><br>
+
+            <label for="blocks">Blocks:</label>
+            <input type="number" id="blocks" name="blocks" min="0" step="1" required />
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+</div><br><br><br>
+
+<h1>Retrieve Player Stats by Game Date</h1>
+<label for="gameDateSearch">Enter Game Date:</label>
+<input type="date" id="gameDateSearch" required />
+<button onclick="fetchStats()">Get Stats</button>
+
+<table id="statsTable" style="display: none;">
+    <thead>
+    <tr>
+        <th>Player</th><th>Opponent</th><th>Home?</th><th>Minutes</th><th>Points</th>
+        <th>Rebounds</th><th>Assists</th><th>Steals</th><th>Blocks</th>
+    </tr>
+    </thead>
+    <tbody id="statsBody"></tbody>
+</table> <br><br><br>
+
+<a href="https://cdn.wnba.com/sites/1611661313/2025/05/NYL25_STARTING_3_BLACK-REV4.jpg" title="Ionescu-Stewart-Jones, NYL 2025">
+    <img width="550" alt="Ionescu-Stewart-Jones Photo" src="https://cdn.wnba.com/sites/1611661313/2025/05/NYL25_STARTING_3_BLACK-REV4.jpg">
+</a>
+
+<script src="../public/stats.js"></script>
+</body>
